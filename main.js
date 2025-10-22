@@ -133,7 +133,6 @@ function addToSessionStorage(storeName, objName) {
     sessionStorage.setItem(storeName, json);
 }
 
-
 // 8) Provide a function named getFromSessionStorage
 // that will retrieve the object you put in
 // session storage with the previous function.
@@ -143,7 +142,6 @@ function getFromSessionStorage(storeName) {
     const json = sessionStorage.getItem(storeName);
     return JSON.parse(json);
 }
-
 
 // 9) Provide a function emptyWebStorage
 // that will remove all entries from local
