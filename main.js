@@ -17,6 +17,12 @@ given in the comments.
 // button should change the text content of the
 // paragraph with an id of "p1" to:
 // "Hello World! I'm listening to events."
+const myP1 = document.getElementById("p1");
+const changeP1 = document.getElementById("button1");
+
+changeP1.addEventListener("click", function() {
+    myP1.innerHTML = "Hello World! I'm listening to events."; 
+});
 
 
 // 2) Add an event listener to the button with an id
@@ -30,6 +36,12 @@ given in the comments.
 // The button should switch the text back
 // and forth, so 3rd and 4th clicks will
 // do the same, etc.
+const myP2 = document.getElementById("p2");
+const changeP2 = document.getElementById("button2");
+
+changeP2.addEventListener("click", function() {
+    myP2.innerHTML = "This button toggles text content.";
+});
 
 
 /////////////////////
