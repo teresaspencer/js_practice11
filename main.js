@@ -51,7 +51,6 @@ changeP2.addEventListener("click",
     }, false);
 
 
-
 /////////////////////
 // Note: The remaining buttons and paragraphs
 // do not have id attributes. You will need to
@@ -66,20 +65,38 @@ changeP2.addEventListener("click",
 /////////
 // HINT: You should look at the HTML carefully to
 // make your selectors.
+const page = document.getElementById("myPage");
+const button3 = page.querySelector("button:nth-of-type(3)");
+const myP3 = page.querySelector("div p:nth-of-type(3)");
 
+button3.addEventListener("click", (event) => {
+    myP3.textContent = "Third button clicked.";
+});
 
 // 4) In the "myPage" section, select the fourth
 // button and assign a "click" listener. When
 // clicked, it should add a class named
 // "fourthPara" to the fourth paragraph
 // in the "myPage" section.
+const button4 = page.querySelector("button:nth-of-type(4)");
+const myP4 = page.querySelector("div p:nth-of-type(4)");
+class fourthPara {}
 
+button4.addEventListener("click", (event) => {
+    myP4.classList.add("fourthPara");
+});
 
 // 5) In the "myPage" section, select the fifth
 // button and assign a "click" listener. When
 // clicked, it should toggle the class named
 // "fourthPara" for the fifth paragraph
 // in the "myPage" section.
+const button5 = page.querySelector("button:nth-of-type(5)");
+const myP5 = page.querySelector("div p:nth-of-type(5)");
+
+button5.addEventListener("click", (event) => {
+    myP5.classList.toggle("fourthPara");
+});
 
 // 6) In the "myPage" section, select the sixth
 // button and assign a "click" listener. When
@@ -90,7 +107,14 @@ changeP2.addEventListener("click",
 // Your event listener should be set to
 // Event Bubbling. You should stop the
 // event propagation.
+const button6 = page.querySelector("button:nth-of-type(6)");
+const myP6 = page.querySelector("div p:nth-of-type(6)");
 
+    button6.addEventListener("click", (event) => {
+        myP6.textContent = "Event Bubbling. Stopping propagation.";
+        event.stopPropagation();
+    }, false
+);
 
 // 7) Provide a function named "addToSessionStorage"
 // that accepts two parameters:
@@ -104,6 +128,10 @@ changeP2.addEventListener("click",
 //////
 // Hint: Use JSON methods on these storage problems.
 /////
+function addToSessionStorage(storeName, objName) {
+    const json = JSON.stringify(objName);
+    sessionStorage.setItem(storeName, json);
+}
 
 
 // 8) Provide a function named getFromSessionStorage
@@ -111,9 +139,17 @@ changeP2.addEventListener("click",
 // session storage with the previous function.
 // Your function should accept a "storeName"
 // parameter and return the object it retrieves.
+function getFromSessionStorage(storeName) {
+    const json = sessionStorage.getItem(storeName);
+    return JSON.parse(json);
+}
 
 
 // 9) Provide a function emptyWebStorage
 // that will remove all entries from local
 // storage and session storage.
+function emptyWebStorage() {
+    sessionStorage.clear();
+    localStorage.clear();
+}
 
